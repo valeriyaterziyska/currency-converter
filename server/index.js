@@ -1,8 +1,11 @@
+const PORT = 5000;
 const express = require("express");
 
 const app = express();
 
-const PORT = 5000;
+app.use(express.static('public')); 
+app.use(express.urlencoded({ extended: false}));
+
 
 app.get("/", (req, res) => {
     res.send("Hello, world");
